@@ -27,7 +27,7 @@ terragrunt apply # Apply shit. Don't do it just yet
 
 You will want to import what you have. Each terraform/tofu provider has documentation here: https://registry.terraform.io.
 
-Each resource has the form "<provider>_<resource>". For example:
+Each resource has the form "\<provider\>_\<resource\>". For example:
 ```
 resource "unifi_network" "main" {  # Provider: unifi, Resource: network
   name    = "main"
@@ -56,7 +56,7 @@ This uses the provider `unifi` and creates the resource `network`.
 In the resource documentation (e.g. https://registry.terraform.io/providers/ubiquiti-community/unifi/latest/docs/resources/network) at the end you have the import command. Everything you already did by hand you can import.
 
 ```bash
-terragrunt import unifi_network.main name=<name you get from your unifi equipment>
+terragrunt import unifi_network.main name=\<name you get from your unifi equipment\>
 ```
 
 When you run a `terragrunt plan` you will find the cannonical name for the resource. It is the path in the state file, a `.json` file. https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON
